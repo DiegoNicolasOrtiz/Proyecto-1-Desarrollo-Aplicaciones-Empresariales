@@ -6,7 +6,7 @@ const Tutorial = () => {
       <h2>¿Cómo hacer una reserva?</h2>
       <ol style={styles.list}>
         <li>Ingresa a la sección "Reservar" desde la barra de navegación.</li>
-        <li>Completa tus datos: nombre, fecha, hora y cantidad de personas.</li>
+        <li>Completa tus datos: Nombre, fecha, hora y cantidad de personas.</li>
         <li>Confirma tu reserva haciendo clic en "Reservar".</li>
         <li>¡Listo! Recibirás la confirmación en pantalla.</li>
       </ol>
