@@ -1,8 +1,11 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Home from './Home';
-import Reserva from './Reserva';
-import Navbar from './Navbar';
+import Home from './pages/Home';
+import Reserva from './pages/Reserva';
+import Tutorial from './pages/Tutorial';
+import RegistroEmpleado from './pages/RegistroEmpleado';
+import Contactanos from './pages/Contactanos';
+import Navbar from './components/Navbar';
 
 function App() {
   return (
@@ -12,7 +15,10 @@ function App() {
         <main style={styles.main}>
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/tutorial" element={<Tutorial />} />
             <Route path="/reserva" element={<Reserva />} />
+            <Route path="/registro-empleado" element={<RegistroEmpleado />} />
+            <Route path="/contactanos" element={<Contactanos />} />
           </Routes>
         </main>
         <footer style={styles.footer}>
@@ -28,16 +34,19 @@ const styles = {
     display: 'flex',
     flexDirection: 'column',
     minHeight: '100vh',
+    border: '5px solid #3ccf94',
+    boxSizing: 'border-box',
   },
   main: {
     flex: 1,
-    paddingBottom: '2rem',
+    padding: '2rem',
   },
   footer: {
     backgroundColor: '#3ccf94',
     color: 'white',
     textAlign: 'center',
     padding: '1rem',
+    borderTop: '4px solid #3ccf94',
   }
 };
 
