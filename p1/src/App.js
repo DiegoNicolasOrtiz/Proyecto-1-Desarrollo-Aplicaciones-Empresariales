@@ -1,53 +1,34 @@
-import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Home from './pages/Home';
-import Reserva from './pages/Reserva';
-import Tutorial from './pages/Tutorial';
-import RegistroEmpleado from './pages/RegistroEmpleado';
-import Contactanos from './pages/Contactanos';
-import Navbar from './components/Navbar';
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import Home from "./pages/Home";
+import Reserva from "./pages/Reserva";
+import Tutorial from "./pages/Tutorial";
+import RegistroEmpleado from "./pages/RegistroEmpleado";
+import Contactanos from "./pages/Contactanos";
+import MisReservas from "./pages/MisReservas";
 
 function App() {
   return (
     <Router>
-      <div className="App" style={styles.app}>
+      <div style={{ border: '8px solid #3ccf94', minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
         <Navbar />
-        <main style={styles.main}>
+        <div style={{ flex: 1 }}>
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/tutorial" element={<Tutorial />} />
             <Route path="/reserva" element={<Reserva />} />
+            <Route path="/tutorial" element={<Tutorial />} />
             <Route path="/registro-empleado" element={<RegistroEmpleado />} />
             <Route path="/contactanos" element={<Contactanos />} />
+            <Route path="/mis-reservas" element={<MisReservas />} />
           </Routes>
-        </main>
-        <footer style={styles.footer}>
-          <p>📧 contacto@reserrestaurante.fake — 📞 123456789</p>
+        </div>
+        <footer style={{ backgroundColor: '#3ccf94', color: 'white', padding: '10px', textAlign: 'center' }}>
+          contacto@reserrestaurante.fake | +569123456789
         </footer>
       </div>
     </Router>
   );
 }
-
-const styles = {
-  app: {
-    display: 'flex',
-    flexDirection: 'column',
-    minHeight: '100vh',
-    border: '5px solid #3ccf94',
-    boxSizing: 'border-box',
-  },
-  main: {
-    flex: 1,
-    padding: '2rem',
-  },
-  footer: {
-    backgroundColor: '#3ccf94',
-    color: 'white',
-    textAlign: 'center',
-    padding: '1rem',
-    borderTop: '4px solid #3ccf94',
-  }
-};
 
 export default App;
